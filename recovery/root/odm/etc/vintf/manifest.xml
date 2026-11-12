@@ -1,0 +1,47 @@
+<!--
+    Input:
+        device/lenovo/elden_prc_wifi/manifest_sun.xml
+-->
+<manifest version="8.0" type="device" target-level="202404">
+    <hal format="aidl">
+        <name>android.hardware.gatekeeper</name>
+        <fqname>IGatekeeper/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.security.keymint</name>
+        <version>4</version>
+        <fqname>IKeyMintDevice/strongbox</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.security.keymint</name>
+        <version>3</version>
+        <fqname>IRemotelyProvisionedComponent/strongbox</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>android.hardware.weaver</name>
+        <version>2</version>
+        <fqname>IWeaver/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.qti.hardware.spu</name>
+        <version>2</version>
+        <fqname>ISPUManager/default</fqname>
+    </hal>
+    <sepolicy>
+        <version>202404</version>
+    </sepolicy>
+
+    <!-- AERA recovery audio: AudioReach AGM/PAL and DSP user-space hosts -->
+    <hal format="aidl">
+        <name>vendor.qti.hardware.agm</name>
+        <fqname>IAGM/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.qti.hardware.pal</name>
+        <fqname>IPAL/default</fqname>
+    </hal>
+    <hal format="aidl">
+        <name>vendor.qti.hardware.dsp</name>
+        <fqname>IDspService/default</fqname>
+    </hal>
+</manifest>

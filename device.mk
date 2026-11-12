@@ -1,0 +1,53 @@
+#
+# Copyright (C) 2025 The Android Open Source Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Configure base.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+
+# Configure core_64_bit_only.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+
+# Configure virtual_ab compression.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression_with_xor.mk)
+
+# Configure emulated_storage.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
+# Configure twrp common.mk
+$(call inherit-product, vendor/twrp/config/common.mk)
+
+# Shipping API level
+BOARD_SHIPPING_API_LEVEL    := 202504
+PRODUCT_SHIPPING_API_LEVEL  := 36
+PRODUCT_TARGET_VNDK_VERSION := 36
+# Dynamic partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# Kernel
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS   := false
+PRODUCT_ENABLE_UFFD_GC                          := true
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/prebuilts/zsh_bin/zstd:recovery/root/system/bin/zstd \
+    $(DEVICE_PATH)/prebuilts/zsh_bin/zsh:recovery/root/system/bin/zsh \
+    $(DEVICE_PATH)/prebuilts/zsh_bin/wget:recovery/root/system/bin/wget \
+    $(DEVICE_PATH)/prebuilts/zsh_bin/git:recovery/root/system/bin/git \
+    $(DEVICE_PATH)/prebuilts/zsh_bin/curl:recovery/root/system/bin/curl \
+    $(DEVICE_PATH)/prebuilts/zsh_bin/fastfetch:recovery/root/system/bin/fastfetch \
+    $(DEVICE_PATH)/prebuilts/zshrc:recovery/root/.zshrc
+
+# AERA native audio (official AudioReach/PAL port, batch3)
+PRODUCT_PACKAGES += \
+    aera-audio-bridge \
+    aera-audio-service \
+    aera-palplayer \
+    aera-aw-hal
+
+# AERA Recovery R1.0 product-level behaviour switches
+$(call inherit-product, $(DEVICE_PATH)/aera_TB323FU.mk)

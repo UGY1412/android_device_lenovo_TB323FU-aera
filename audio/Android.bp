@@ -1,0 +1,61 @@
+// Copyright (C) 2026 AERA Recovery Project contributors
+// SPDX-License-Identifier: Apache-2.0
+
+cc_binary {
+    name: "aera-audio-service",
+    recovery: true,
+    srcs: ["aera_agm_service.c"],
+    shared_libs: [
+        "libdl",
+        "liblog",
+    ],
+    // libbinder_ndk is loaded at runtime (dlopen) so the host always uses the
+    // same binder copy as the bundled stock A17 libraries.
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+}
+
+cc_binary {
+    name: "aera-audio-bridge",
+    recovery: true,
+    srcs: ["aera_audio_bridge.cpp"],
+    shared_libs: ["libdl"],
+    cpp_std: "c++17",
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+}
+
+// AERA-T10: dedicated stock-A17 PAL consumer. Runs in its own process with
+// LD_LIBRARY_PATH pointing at /AERA/audio/abi first, so the stock A17 PAL
+// runtime is isolated from the AOSP16 recovery C++/binder runtime.
+cc_binary {
+    name: "aera-palplayer",
+    recovery: true,
+    srcs: ["aera_palplayer.cpp"],
+    shared_libs: ["libdl", "liblog"],
+    cpp_std: "c++17",
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+}
+
+// AERA-T10: Awinic HAL probe/fallback (diagnostic; not started by default).
+cc_binary {
+    name: "aera-aw-hal",
+    recovery: true,
+    srcs: ["aera_aw_hal.c"],
+    shared_libs: ["libdl"],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+    ],
+}
