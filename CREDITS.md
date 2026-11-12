@@ -25,7 +25,7 @@ this repository. The same rows are given in English and Chinese below. See also
 | 8 | OrangeFox Recovery Project | <https://gitlab.com/OrangeFox> | Baseline lineage of the validated OrangeFox R12.0 (`fox_16.0`) recovery tree this port derives from; OrangeFox release images are build outputs, not committed here | Upstream project licenses; not vendored as source in this tree (待验证 per file) |
 | 9 | isrgish / TB323FU-TWRP | <https://github.com/isrgish/TB323FU-TWRP> | Original TB323FU TWRP device tree this repository derives from (through the validated baseline) | **No explicit LICENSE file**: the upstream repository declares provenance/lineage only, and no license grant is asserted by the upstream author. Treated as an attributed upstream source; confirm reuse terms with the upstream author. |
 | 10 | aweiyry / lenovo-ota-tool | <https://github.com/aweiyry/lenovo-ota-tool> | External tool used to obtain/handle Lenovo OTA and stock partition images; not vendored | MIT |
-| 11 | DeepSeek V4.1 Flash 1017 | — | AI coding assistant used by the maintainer during development and documentation | **Tool, not a copyright holder**; no license claim and no code ownership |
+| 11 | DeepSeek V4.1 Flash 1017 | — | Co-author (collaboration on development and documentation) | — |
 | 12 | Six prebuilt shell tools: curl, fastfetch, git, wget, zsh, zstd | see `docs/THIRD_PARTY_TOOLS.md` | Tracked third-party binary prebuilts used by the recovery build | Per-tool licenses; texts under `LICENSES/third-party-tools/` |
 | 13 | Magisk (topjohnwu) | <https://github.com/topjohnwu/Magisk> | The project device is Magisk-rooted; Root Manager integration is referenced but no KernelSU/SukiSU patching is performed | GPL-3.0 (upstream); not bundled in this Git repository |
 | 14 | Awinic (AW882xx) speaker amplifier driver | vendor kernel driver (stock firmware) | The optional audio path drives the stock AW882xx smart-PA through the stock kernel driver; no driver source is included | Vendor kernel driver, stock firmware only; not redistributed |
@@ -44,7 +44,7 @@ this repository. The same rows are given in English and Chinese below. See also
 | 8 | OrangeFox Recovery Project | <https://gitlab.com/OrangeFox> | 本移植所衍生自的已验证 OrangeFox R12.0（`fox_16.0`）recovery 树的基线传承；OrangeFox 发布镜像属于构建产物，不在本仓库提交 | 上游项目许可；本仓库未以源码形式引入（逐文件待验证） |
 | 9 | isrgish / TB323FU-TWRP | <https://github.com/isrgish/TB323FU-TWRP> | 本仓库（经由已验证基线）所衍生的原始 TB323FU TWRP 设备树 | **无显式 LICENSE 文件**：上游仓库只声明来源/传承，上游作者未声明任何许可授权。按“已署名的上游来源”对待；复用条款需与上游作者确认。 |
 | 10 | aweiyry / lenovo-ota-tool | <https://github.com/aweiyry/lenovo-ota-tool> | 用于获取/处理联想 OTA 与 stock 分区镜像的外部工具；未随仓库分发 | MIT |
-| 11 | DeepSeek V4.1 Flash 1017 | — | 维护者在开发与文档过程中使用的 AI 编程助手 | **工具，非版权方**；不主张许可，也不拥有代码版权 |
+| 11 | DeepSeek V4.1 Flash 1017 | — | 共同署名（协作开发与文档） | — |
 | 12 | 六个预编译 shell 工具：curl、fastfetch、git、wget、zsh、zstd | 见 `docs/THIRD_PARTY_TOOLS.md` | recovery 构建所使用的、随仓库跟踪的第三方二进制预编译件 | 各工具许可；原文见 `LICENSES/third-party-tools/` |
 | 13 | Magisk（topjohnwu） | <https://github.com/topjohnwu/Magisk> | 项目设备为 Magisk root；引用了 Root Manager 集成，但未执行任何 KernelSU/SukiSU patch | GPL-3.0（上游）；本 Git 仓库未捆绑其源码 |
 | 14 | Awinic（AW882xx）扬声器功放驱动 | 厂商内核驱动（原厂固件） | 可选音频通路通过原厂内核驱动驱动 stock AW882xx 智能功放；不包含驱动源码 | 厂商内核驱动，仅限原厂固件；不再分发 |
